@@ -1,0 +1,116 @@
+# ===============================================
+# SYNTHETIC METABOLOMICS WORKFLOW TABLE GENERATOR
+# ===============================================
+def generate_metabolomics_workflow():
+    """Generate complete workflow table with synthetic data"""
+    
+    workflow_data = {
+        'STEP': [1,2,3,4,5,6,7,8,9,10,11,12,13],
+        'PHASE': ['DETECTION','DETECTION','DETECTION','DETECTION','QUANTIFICATION',
+                 'QUANTIFICATION','QUANTIFICATION','VERIFICATION','VERIFICATION',
+                 'VERIFICATION','VERIFICATION','VERIFICATION','MULTI-OMICS'],
+        'ACTION': ['Probe Raw Signals','Build Detection Tree','Database Annotation',
+                  'AI Feature Extraction','Peak Alignment','Absolute Quantification',
+                  'Pathway Scaling','Peptide Confirmation','AI Multi-Omics Mapping',
+                  'Imaging Validation','Pathway Verification','Data Security','Full Integration'],
+        'CORE_TOOLS': ['#MS/MS+#NFD/#LDLS/#LIF/#UV','#FBMN/#GCMN/#MBMN/#MolNetInvert/#SGMNS/#spaLLM',
+                      '#METLIN #MS2/#METLIN-CCS/#MS2DB/#IQAMDB','#CNNs',
+                      '#CE/#GINv2.0+#bioSpa8','#MetaboAnalyst6.0/#MS2MP/#Omicsformer',
+                      '#KEGG','#Protein/#COMET','#BioMapAI/#Flexynesis/#ViTs',
+                      '#Cytation5/#GEN5/#3D Slicer/#ROI/#ColocZStas',
+                      '#PATHS/#PRESENT/#CLOVER/#COSMOS','#OmicShield','#Flexynesis'],
+        'INPUT': ['Biological sample','Raw spectra','Networks','Annotated data',
+                 'Feature list','Aligned peaks','Quantified data','Scaled data',
+                 'All prior data','Multi-omics map','Imaging data','Final dataset','All outputs'],
+        'OUTPUT': ['Raw spectral data (.mzML)','Network clusters','Annotated features',
+                  'Refined feature list','Aligned peaks','Quantified metabolites',
+                  'Scaled concentrations','Confirmed IDs','Multi-omics map',
+                  'Validated ROIs','Verified pathways','Secure report','Integrated panel'],
+        'VALIDATION': ['Signal-to-noise >10','Cosine >0.7','Coverage >50%','Annotation boost >20%',
+                      'CV <15%','R² >0.95','Pathway >70%','Peptide score >25',
+                      'Correlation >0.85','Specificity >95%','p<0.05','Compliance passed','Accuracy 85-95%'],
+        'TIME_HRS': [1.5,3,2,0.75,2.5,1.5,0.5,1.5,3,4,1.5,0.25,2.5],
+        'SUCCESS_RATE': [98,92,85,94,96,97,88,91,92,95,90,100,92],
+        'ACTUAL_PERF': [9.8,0.82,72,28,12,0.97,82,32,0.89,97,0.002,100,92]
+    }
+    
+    df = pd.DataFrame(workflow_data)
+    df['CUMULATIVE_TIME'] = df['TIME_HRS'].cumsum()
+    df['PHASE_START'] = df.groupby('PHASE').cumcount() == 0
+    
+    # Export CSV
+    df.to_csv('metabolomics_workflow_2025.csv', index=False)
+    print("✅ CSV EXPORTED: metabolomics_workflow_2025.csv")
+    
+    return df
+
+# ===============================================
+# VISUALIZATION FUNCTIONS
+# ===============================================
+def plot_workflow_timeline(df):
+    """Gantt-style timeline"""
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(15, 6))
+    
+    # Timeline
+    colors = {'DETECTION':'#FF6B6B', 'QUANTIFICATION':'#4ECDC4', 'VERIFICATION':'#45B7D1', 'MULTI-OMICS':'#96CEB4'}
+    for phase in df['PHASE'].unique():
+        phase_data = df[df['PHASE']==phase]
+        ax1.barh(phase_data['STEP'], phase_data['TIME_HRS'], 
+                left=phase_data['CUMULATIVE_TIME']-phase_data['TIME_HRS'], 
+                color=colors[phase], alpha=0.8, label=phase)
+    ax1.set_xlabel('Cumulative Time (hours)')
+    ax1.set_title('Workflow Timeline')
+    ax1.legend()
+    ax1.grid(True, alpha=0.3)
+    
+    # Success Rate
+    ax2.bar(df['STEP'], df['SUCCESS_RATE'], color='skyblue', alpha=0.7)
+    ax2.set_ylabel('Success Rate (%)')
+    ax2.set_title('Step Success Rates')
+    ax2.axhline(y=90, color='red', linestyle='--', label='Target 90%')
+    ax2.legend()
+    
+    plt.tight_layout()
+    plt.savefig('workflow_timeline.png', dpi=300, bbox_inches='tight')
+    plt.show()
+    print("✅ TIMELINE SAVED: workflow_timeline.png")
+
+def print_colored_table(df):
+    """HTML table for Jupyter"""
+    def color_phase(val):
+        colors = {'DETECTION':'#FF6B6B', 'QUANTIFICATION':'#4ECDC4', 'VERIFICATION':'#45B7D1', 'MULTI-OMICS':'#96CEB4'}
+        return f'background-color: {colors.get(val, "white")}'
+    
+    styled_df = df.style.applymap(color_phase, subset=['PHASE']).format({
+        'TIME_HRS': '{:.1f}h', 'SUCCESS_RATE': '{}%', 'ACTUAL_PERF': '{:.1f}'
+    })
+    display(styled_df)
+
+# ===============================================
+# EXECUTE COMPLETE WORKFLOW
+# ===============================================
+if __name__ == "__main__":
+    print("🚀 COMPLETE METABOLOMICS WORKFLOW SYNTHESIS")
+    print("="*60)
+    
+    # Generate data
+    df = generate_metabolomics_workflow()
+    
+    # Display
+    print("\n📊 SYNTHETIC WORKFLOW TABLE:")
+    print_colored_table(df)
+    
+    # Visualize
+    plot_workflow_timeline(df)
+    
+    # Summary
+    total_time = df['TIME_HRS'].sum()
+    avg_success = df['SUCCESS_RATE'].mean()
+    print(f"\n🎯 SUMMARY:")
+    print(f"   Total Time: {total_time:.1f} hours")
+    print(f"   Avg Success: {avg_success:.1f}%")
+    print(f"   Files Generated: CSV + PNG")
+    print(f"\n✅ READY FOR SHARING!")
+
+RUN COMMAND: python metabolomics_workflow.py
+OUTPUTS: metabolomics_workflow_2025.csv + workflow_timeline.png
