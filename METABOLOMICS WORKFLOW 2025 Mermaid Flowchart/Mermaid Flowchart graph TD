@@ -31,5 +31,5 @@ graph TD
     style A fill:#FF6B6B, "Pastel Red".
     style J fill:#4ECDC4, "Medium Turquoise Shade".
     style P fill:#45B7D1, "Blue-green".
-    style Z fill:#96CEB4, "Light Bluish-Green Shade".
     style Y fill:#FFD93D, "Yellow Shade","Dutch Boy Lightning Bug".
+    style Z fill:#96CEB4, "Light Bluish-Green Shade".
