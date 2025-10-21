@@ -1,0 +1,125 @@
+STEP
+
+PHASE
+ACTIONS (TO DO)
+
+CORE TOOLS
+
+
+INPUT
+
+OUTPUT
+
+
+VALIDATION CRITERIA
+
+TIME EST.
+
+1
+DETECTION
+Probe Raw Signals Acquire MS/MS + fluorescence spectra
+#MS/MS + #NFD/#LDLS/#LIF/#UV
+Biological sample
+Raw spectral data (.mzML)
+Signal-to-noise >10
+1-2 hrs
+2
+DETECTION
+Build Detection Tree Generate molecular networks
+#FBMN/#GCMN/#MBMN/#MolNetInvert/#SGMNS/#spaLLM
+Raw spectra
+Network clusters
+Cosine similarity >0.7
+2-4 hrs
+3
+DETECTION
+Database Annotation Match to spectral libraries
+#METLIN #MS2/#METLIN-CCS/#MS2DB/#IQAMDB
+Networks
+Annotated features
+Coverage >50% features
+1-3 hrs
+4
+DETECTION
+AI Feature Extraction
+Refine detections w/ deep learning 
+#CNNs
+Annotated data
+Refined feature list
+Annotation boost >20%
+30-60 min
+5
+QUANTIFICATION
+Peak Alignment Separate & align across samples
+#CE/#GINv2.0 + #bioSpa8 (automation)
+Feature list
+Aligned peaks
+CV <15% across replicates
+2-3 hrs 
+6
+QUANTIFICATION
+Absolute Quantification Integrate peak areas
+#MetaboAnalyst6.0/#MS2MP/#Omicsformer
+Aligned peaks 
+Quantified metabolites
+
+Linearity R² >0.95 
+1-2 hrs
+7
+QUANTIFICATION
+Pathway Scaling Normalize to biological context
+#KEGG
+Quantified data
+Scaled concentrations
+Pathway coverage >70% 
+30 min
+8
+VERIFICATION
+Peptide Confirmation
+Validate protein-metabolite links 
+#Protein analysis/#COMET
+Scaled data 
+Confirmed IDs
+Peptide score >25
+1-2 hrs
+9
+VERIFICATION
+AI Multi-Omics Mapping Integrate w/ genomics/proteomics
+#BioMapAI/#Flexynesis/#ViTs
+All prior data
+Multi-omics map
+Correlation >0.85
+2-4 hrs
+10
+VERIFICATION
+Imaging Validation Confirm spatial distribution
+#Cytation5/#GEN5/#3DSlicer/#ROI/#ColocZStas
+Multi-omics map
+Validated ROIs
+Specificity >95%
+3-5 hrs
+11
+VERIFICATION
+Pathway Verification Confirm biological relevance
+#PATHS/#PRESENT/#CLOVER/#COSMOS
+Imaging data
+Verified pathways
+p<0.05 enrichment
+1-2 hrs
+12
+VERIFICATION
+Data Security & Export
+Secure & finalize results 
+#OmicShield
+Final dataset
+Secure report
+Compliance audit passed
+15 min
+13
+MULTI-OMICS 
+Full Integration Combine all -omics layers
+#Flexynesis 
+All outputs
+Integrated biomarker panel
+85-95% accuracy
+2-3 hrs
