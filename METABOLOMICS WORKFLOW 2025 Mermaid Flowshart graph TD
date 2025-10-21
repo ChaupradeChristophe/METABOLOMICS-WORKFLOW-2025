@@ -1,0 +1,35 @@
+graph TD
+    A[START: Biological Sample] --> B[#MS/MS + #NFD/#LDLS]
+    B --> C[Raw Spectra .mzML]
+    C --> D[#FBMN/#GCMN/#MBMN<br/>#MolNetInvert/#SGMNS/#spaLLM]
+    D --> E[Network Clusters<br/>Cosine >0.7]
+    E --> F[#METLIN-CCS/#MS2DB]
+    F --> G[Annotated Features<br/>Coverage >50%]
+    G --> H[#CNNs AI Extraction]
+    H --> I[Refined Features<br/>+20% boost]
+    
+    I --> J[#CE/#GINv2.0 + #bioSpa8]
+    J --> K[Aligned Peaks<br/>CV <15%]
+    K --> L[#MetaboAnalyst 6.0<br/>#MS2MP/#Omicsformer]
+    L --> M[Quantified Metabolites<br/>R² >0.95]
+    M --> N[#KEGG Pathway Scaling]
+    N --> O[Scaled Concentrations<br/>70% coverage]
+    
+    O --> P[#COMET Peptide IDs]
+    P --> Q[Confirmed IDs<br/>Score >25]
+    Q --> R[#BioMapAI/#Flexynesis/#ViTs]
+    R --> S[Multi-omics Map<br/>Corr >0.85]
+    S --> T[#Cytation5/#3D Slicer/#ROI]
+    T --> U[Validated ROIs<br/>95% specificity]
+    U --> V[#PATHS/#CLOVER/#COSMOS]
+    V --> W[Verified Pathways<br/>p<0.05]
+    W --> X[#OmicShield Secure]
+    X --> Y[FINAL: Biomarker Panel<br/>92% Accuracy]
+    
+    Y --> Z[#Flexynesis Multi-omics<br/>Optional Integration]
+    
+    style A fill:#FF6B6B, "Pastel Red".
+    style J fill:#4ECDC4, "Medium Turquoise Shade".
+    style P fill:#45B7D1, "Blue-green".
+    style Z fill:#96CEB4, "Light Bluish-Green Shade".
+    style Y fill:#FFD93D, "Yellow Shade","Dutch Boy Lightning Bug".
