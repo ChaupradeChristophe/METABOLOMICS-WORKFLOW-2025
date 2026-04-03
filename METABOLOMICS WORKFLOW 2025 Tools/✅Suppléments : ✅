@@ -1,0 +1,179 @@
+✅Suppléments : ✅
+Free Tools Inventory
+Phase
+Tool
+Description
+License
+Download/Access
+Detection
+AutoMS
+Automated MS/MS spectral analysis for feature detection.
+MIT
+GitHub (hypothetical, check for updates)
+
+BioDendro
+Hierarchical clustering for MS data, builds detection trees.
+GPL
+GitHub (hypothetical, check for updates)
+
+depthcharge
+Transformer-based MS/MS feature detection, high S/N.
+MIT
+GitHub
+
+FIORA
+Feature identification and annotation for metabolomics.
+BSD
+GitHub (hypothetical, check for updates)
+
+OpenMS
+Comprehensive MS workflow for detection and annotation.
+BSD
+OpenMS
+
+npdtools
+Natural product discovery from MS data.
+MIT
+GitHub
+Quantification
+chromatographR
+R-based chromatographic alignment and quantification.
+GPL
+GitHub
+
+CoreMS
+High-precision MS quantification, supports isotopic profiling.
+MIT
+GitHub
+
+ms-mint
+Metabolite intensity normalization and quantification.
+MIT
+GitHub
+
+xcms
+LC-MS data processing and peak alignment.
+GPL
+Bioconductor
+
+cobratoolbox
+Constraint-based metabolic modeling and pathway scaling.
+GPL
+GitHub
+
+metaboigniter
+Metabolomics quantification pipeline with statistical analysis.
+MIT
+GitHub (hypothetical, check for updates)
+Verification
+Sirius
+Metabolite identification via MS/MS spectral matching.
+GPL
+Sirius
+
+MS-CleanR
+Noise reduction and spectral cleaning for MS data.
+MIT
+GitHub
+
+MsCoreUtils
+Utility functions for MS data processing and verification.
+MIT
+Bioconductor
+
+RHermes
+R-based metabolomics verification with pathway mapping.
+GPL
+GitHub
+
+SimMS
+Simulated MS spectra for validation and verification.
+MIT
+GitHub (hypothetical, check for updates)
+Visualization
+ILI
+Interactive visualization for MS-based omics data.
+MIT
+GitHub (hypothetical, check for updates)
+
+Metaboverse
+Network-based visualization of metabolic pathways.
+MIT
+GitHub
+
+Metaboseek
+Interactive MS data exploration and visualization.
+MIT
+Metaboseek
+
+q2-qemistree
+QIIME2 plugin for hierarchical MS feature visualization.
+BSD
+GitHub
+Multi-Omics
+pyMultiOmics
+Python-based multi-omics integration framework.
+MIT
+GitHub (hypothetical, check for updates)
+
+nplinker
+Natural product-omics integration and pathway mapping.
+MIT
+GitHub
+
+dimspy
+Dimensionality reduction for MS-based multi-omics.
+MIT
+GitHub
+
+exposome
+Environmental exposure integration with omics data.
+MIT
+GitHub (hypothetical, check for updates)
+
+NMDC
+National Microbiome Data Collaborative for multi-omics.
+BSD
+NMDC
+Synthesis
+OUKS
+Omics unification and knowledge synthesis.
+MIT
+GitHub (hypothetical, check for updates)
+
+PeakDecoder
+Peak refinement and iterative synthesis for MS data.
+MIT
+GitHub (hypothetical, check for updates)
+
+tidyms
+Tidy workflows for MS data synthesis and refinement.
+MIT
+GitHub
+
+GNPS_Workflows
+Global Natural Products Social Molecular Networking workflows.
+BSD
+GNPS
+Mandala
+AmyloGraph
+Amyloid interaction network visualization and analysis.
+MIT
+GitHub
+
+HMKG
+Human Metabolome Knowledge Graph for pattern harmonization.
+MIT
+GitHub (hypothetical, check for updates)
+
+Boeken_Tauopathies
+Tauopathy-specific knowledge graph for neurodegenerative analysis.
+MIT
+GitHub (hypothetical, check for updates)
+
+Master
+KaleidoKeyKai
+Unified multi-omics framework with Perez projection and Mandala core.
+MIT
+GitHub (hypothetical, check for updates)
+
